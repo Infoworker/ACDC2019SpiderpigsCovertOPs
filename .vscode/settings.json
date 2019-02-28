@@ -1,7 +1,7 @@
 {
     "gitflow4code.features": [
         {
-            "name": "feature/InitiateProject",
+            "name": "feature/SamleDataForFlowTask",
             "base": "develop"
         }
     ]
