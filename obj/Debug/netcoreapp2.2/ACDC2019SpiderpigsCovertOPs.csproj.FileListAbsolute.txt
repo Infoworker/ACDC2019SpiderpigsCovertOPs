@@ -1,0 +1,16 @@
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\bin\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.deps.json
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\bin\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.runtimeconfig.json
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\bin\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.runtimeconfig.dev.json
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\bin\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.dll
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\bin\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.pdb
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.csprojAssemblyReference.cache
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.csproj.CoreCompileInputs.cache
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.RazorAssemblyInfo.cache
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.RazorAssemblyInfo.cs
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.AssemblyInfoInputs.cache
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.AssemblyInfo.cs
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.RazorTargetAssemblyInfo.cache
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.dll
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.pdb
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\bin\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.xml
+C:\ACDC2019\ACDC2019SpiderpigsCovertOPs\obj\Debug\netcoreapp2.2\ACDC2019SpiderpigsCovertOPs.xml
