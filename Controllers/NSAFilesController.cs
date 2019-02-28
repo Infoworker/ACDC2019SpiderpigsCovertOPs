@@ -8,13 +8,15 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class NSAFilesController : ControllerBase
     {
-        // GET api/values
+        /// <summary>
+        /// - Gets all persons in the NSA Db
+        /// </summary>
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Person1", "Person2", "Person3" };
         }
 
         // GET api/values/5

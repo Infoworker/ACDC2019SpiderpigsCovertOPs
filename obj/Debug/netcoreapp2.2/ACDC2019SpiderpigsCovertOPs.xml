@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ACDC2019SpiderpigsCovertOPs</name>
+    </assembly>
+    <members>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Get">
+            <summary>
+            - Gets all persons in the NSA Db
+            </summary>
+        </member>
+    </members>
+</doc>
