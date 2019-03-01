@@ -7,50 +7,57 @@ using ACDC2019SpiderpigsCovertOPs.Models.DbModels;
 using ACDC2019SpiderpigsCovertOPs.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace ACDC2019SpiderpigsCovertOPs.Controllers
 {
-    /// Controller - Persons
+    /// Controller - IoT is taking over the world!
     [Route("api/[controller]")]
     [ApiController]
-    public class IoTHackingController : ControllerBase
+    public class IoTHackingsController : ControllerBase
     {
-
         private CovertOPsContext _context;
 
-        ///
-        public IoTHackingController(CovertOPsContext context)
+        /// IoT controller
+        public IoTHackingsController(CovertOPsContext context)
         {
             _context = context;
         }
 
-        [HttpGet(Name = "GetAllTemperatures")]
-        public ActionResult GetAllTemperatures()
+        /// <summary>
+        /// - Get all IoT temperature readings around the world (Open)
+        /// </summary>
+        [HttpGet(Name = "GetAllIoTTemperatures")]
+        public async Task<ActionResult<SensordataDto>> GetAllIoTTemperatures()
         {
-            var allTemperatures = _context.Sensordatas.ToList();
+            var allIoTTemperatures = await _context.Sensordatas
+                .ToListAsync();
 
-            return Ok(allTemperatures);          
+            return Ok(Mapper.Map<List<SensordataDto>>(allIoTTemperatures));          
         }
 
-        [HttpGet("{id}", Name = "GetTemperature")]
-        //[Route("{id:int}", Name = nameof(GetSingleFood))]
-        public ActionResult<SensordataDto> GetTemperature(int id)
+        /// <summary>
+        /// - Get a IoT temperature by id (Open)
+        /// </summary>
+        [HttpGet("{id}", Name = "GetIoTTemperature")]        
+        public async Task<ActionResult<SensordataDto>> GetIoTTemperature(int id)
         {
-            var result = _context.Sensordatas.FirstOrDefault(sd => sd.Id == id); // data access call
+            var oneTemprature = await _context.Sensordatas
+                .FirstOrDefaultAsync(sd => sd.Id == id);
 
-            if (result == null)
+            if (oneTemprature == null)
             {
                 return NotFound();
             }
 
-            return Ok(Mapper.Map<SensordataDto>(result));
+            return Ok(Mapper.Map<SensordataDto>(oneTemprature));
         }
 
         /// <summary>
-        /// 
+        /// - Add a new IOT temperature (need accesskey)
         /// </summary>
-        [HttpPost]
-        public ActionResult<SensordataInsertDto> PostTemperatures([FromBody] SensordataInsertDto sensordataInsertDto)
+        [HttpPost(Name = "PostIoTTemperatures")]
+        public async Task<ActionResult<SensordataInsertDto>> PostIoTTemperatures([FromBody] SensordataInsertDto sensordataInsertDto)
         {
             if (sensordataInsertDto == null)
             {
@@ -65,16 +72,15 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
             Sensordata addSensordata = Mapper.Map<Sensordata>(sensordataInsertDto);
 
             _context.Sensordatas.Add(addSensordata);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
-            Sensordata newTemperature = _context.Sensordatas.FirstOrDefault(sd => sd.Id == addSensordata.Id);
+            Sensordata newTemperature = await _context.Sensordatas
+                .FirstOrDefaultAsync(sd => sd.Id == addSensordata.Id);
 
             return CreatedAtRoute(
-                routeName: "GetTemperature",
+                routeName: "GetIoTTemperature",
                 routeValues: new { id = newTemperature.Id },
                 value: Mapper.Map<SensordataDto>(newTemperature));
         }
-
-
     }
 }
