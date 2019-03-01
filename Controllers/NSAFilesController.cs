@@ -27,10 +27,11 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
         /// <summary>
         /// - Gets all secret personel files
         /// </summary>
-        [HttpGet(Name = "GetAllNSAFiles")]
+        [HttpGet(Name = "GetAllNSAFiles")]        
         public async Task<ActionResult<PersonDto>> GetAllNSAFiles()
         {
             var allNSAFiles = await _context.Persons
+                .Include(l => l.Location).ThenInclude(p => p.Person)
                 .ToListAsync();
 
             return Ok(Mapper.Map<List<PersonDto>>(allNSAFiles));
@@ -42,7 +43,8 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
         [HttpGet("{id}", Name = "GetNSAFile")]        
         public async Task<ActionResult<PersonDto>> GetNSAFile(int id)
         {
-            var oneNSAFile = await _context.Persons                
+            var oneNSAFile = await _context.Persons
+                .Include(l => l.Location)               
                 .FirstOrDefaultAsync(sd => sd.Id == id);
 
             if (oneNSAFile == null)

@@ -39,29 +39,29 @@
             </summary>
         </member>
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController">
-            Controller - Persons
+            Controller - NSA files
         </member>
         <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
-            
+            Secret NSA files
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.GetPersons">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.GetAllNSAFiles">
             <summary>
-            - Gets all persondata for the Flow Challange
+            - Gets all secret personel files
             </summary>
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Post(System.String)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.GetNSAFile(System.Int32)">
             <summary>
-            
+            - Get a secret personel file by id (Open)
             </summary>
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Put(System.Int32,System.String)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.PutSecretLair(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.ViewModels.PersonDto)">
             <summary>
-            
+            - Change a secret personel file (need accesskey)
             </summary>
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Delete(System.Int32)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.PostNSAFile(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.PersonInsertDto)">
             <summary>
-            
+            - Add a new secret personel file (need accesskey)
             </summary>
         </member>
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController">
