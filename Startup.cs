@@ -92,7 +92,9 @@ namespace ACDC2019SpiderpigsCovertOPs
                 mapper.CreateMap<Building, BuildingDto>().ReverseMap();  
                 mapper.CreateMap<Building, BuildingInsertDto>().ReverseMap();
                 mapper.CreateMap<Position, PositionDto>().ReverseMap();  
-                mapper.CreateMap<Position, PositionInsertDto>().ReverseMap();                 
+                mapper.CreateMap<Position, PositionInsertDto>().ReverseMap();
+                mapper.CreateMap<Person, PersonDto>().ReverseMap();
+                mapper.CreateMap<Location, LocationDto>().ReverseMap();
             });
 
 
