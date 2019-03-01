@@ -24,6 +24,14 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
             _context = context;
         }
 
+        [HttpGet(Name = "GetAllTempratures")]
+        public ActionResult GetAllTempratures()
+        {
+            var allTempratures = _context.Sensordatas.ToList();
+
+            return Ok(allTempratures);          
+        }
+
         [HttpGet("{id}", Name = "GetTemprature")]
         //[Route("{id:int}", Name = nameof(GetSingleFood))]
         public ActionResult<SensordataDto> GetTemprature(int id)
