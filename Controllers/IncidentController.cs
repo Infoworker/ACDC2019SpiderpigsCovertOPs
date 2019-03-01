@@ -92,7 +92,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
             Incident newIncident = _context.Incidents.FirstOrDefault(sd => sd.Id == addIncident.Id);
 
             return CreatedAtRoute(
-                routeName: "GetTemperature",
+                routeName: "GetIncident",
                 routeValues: new { id = newIncident.Id },
                 value: Mapper.Map<IncidentDto>(newIncident));
         }
