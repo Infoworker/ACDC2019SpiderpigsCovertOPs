@@ -11,12 +11,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ACDC2019SpiderpigsCovertOPs.Controllers
 {
-    /// Controller - Persons
+    /// Controller - Secret lairs
     [Route("api/[controller]")]
     [ApiController]
     public class SecretLairsController : ControllerBase
     {
-
         private CovertOPsContext _context;
 
         /// Secret lair controller

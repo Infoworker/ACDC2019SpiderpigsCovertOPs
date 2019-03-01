@@ -17,37 +17,25 @@
             - Gets all issues for the Flow Challange
             </summary>
         </member>
-        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController">
-            Controller - Persons
-        </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
-            
-        </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.GetAllIncidents">
-            
-        </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.GetIncident(System.Int32)">
-            
-        </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.PutIncident(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.DbModels.Incident)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.PostIncident(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.IncidentInsertDto)">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController">
-            Controller - Persons
+            Controller - IoT is taking over the world!
         </member>
         <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
-            
+            IoT controller
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.PostTemperatures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.GetAllIoTTemperatures">
             <summary>
-            
+            - Get all IoT temperature readings around the world (Open)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.GetIoTTemperature(System.Int32)">
+            <summary>
+            - Get a IoT temperature by id (Open)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.PostIoTTemperatures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
+            <summary>
+            - Add a new IOT temperature (need accesskey)
             </summary>
         </member>
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController">
@@ -77,7 +65,7 @@
             </summary>
         </member>
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController">
-            Controller - Persons
+            Controller - Secret lairs
         </member>
         <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
             Secret lair controller
@@ -100,6 +88,32 @@
         <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.PostSecretLair(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.BuildingInsertDto)">
             <summary>
             - Add a new secret lair (need accesskey)
+            </summary>
+        </member>
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController">
+            Controller - Shit happens all the time
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+            Shit happens controller
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.GetAllShitHappens">
+            <summary>
+            - Get all the shits that happens around the globe (Open)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.GetShitHappen(System.Int32)">
+            <summary>
+            - Get some shit by id (Open)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.PutShitHappen(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.ViewModels.IncidentDto)">
+            <summary>
+            - Change a shite that happened (need accesskey)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.PostShitHappen(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.IncidentInsertDto)">
+            <summary>
+            - Add a new shit happen (need accesskey)
             </summary>
         </member>
     </members>
