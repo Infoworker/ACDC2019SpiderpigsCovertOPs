@@ -14,5 +14,6 @@ namespace ACDC2019SpiderpigsCovertOPs.Database
 
         public DbSet<Person> Persons { get; set; }
         public DbSet<Sensordata> Sensordatas { get; set; }
+        public DbSet<Incident> Incidents { get; set; }
     }
 }
