@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace ACDC2019SpiderpigsCovertOPs.Models.DbModels
+namespace ACDC2019SpiderpigsCovertOPs.Models.ViewModels
 {
     #pragma warning disable 1591
-    public class Person
+    public class PersonDto
     {
         public long Id { get; set; }
         public string FirstName { get; set; }
@@ -17,6 +17,6 @@ namespace ACDC2019SpiderpigsCovertOPs.Models.DbModels
         public string FavoriteDrink { get; set; }
         public string FavoriteFood { get; set; }
         public string Quote { get; set; }
-        public List<Location> Location { get; set; }
+        public List<LocationDto> Location { get; set; }
     }
 }

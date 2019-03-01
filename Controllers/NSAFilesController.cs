@@ -6,73 +6,112 @@ using ACDC2019SpiderpigsCovertOPs.Database;
 using ACDC2019SpiderpigsCovertOPs.Models.DbModels;
 using ACDC2019SpiderpigsCovertOPs.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace ACDC2019SpiderpigsCovertOPs.Controllers
 {
-    /// Controller - Persons
+    /// Controller - NSA files
     [Route("api/[controller]")]
     [ApiController]
     public class NSAFilesController : ControllerBase
     {
         private readonly CovertOPsContext _context;
 
-        ///
+        /// Secret NSA files
         public NSAFilesController(CovertOPsContext context)
         {
-            _context = context;
-
-            // if(_context.Persons.Count() == 0)
-            // {
-            //     _context.Persons.Add(new Person{ FirstName="Bart", LastName="Simpsons"});
-            //     _context.Persons.Add(new Person{ FirstName="Lisa", LastName="Simpsons"});
-            //     //_context.Persons.Add(new Person{ FirstName="Maggie", LastName="Simpsons"});
-            //     _context.SaveChanges();
-            // }
+            _context = context;           
         }
 
         /// <summary>
-        /// - Gets all persondata for the Flow Challange
+        /// - Gets all secret personel files
         /// </summary>
-        [HttpGet("Persons")]
-        public ActionResult<IEnumerable<string>> GetPersons()
+        [HttpGet(Name = "GetAllNSAFiles")]        
+        public async Task<ActionResult<PersonDto>> GetAllNSAFiles()
         {
-            var persons = new List<FlowChallangePersonsDto> {
-                new FlowChallangePersonsDto{ Id=1, FirstName="Bart", LastName="Simpson", Email="sd@infoworker.no", Birthday=new DateTime(2005, 05, 15), Relation="Tier1", Role="Punk"},
-                new FlowChallangePersonsDto{ Id=2, FirstName="Marge", LastName="Simpson", Email="rb@infoworker.no", Birthday=new DateTime(1978, 02, 28), Relation="Tier1", Role="CEO"},
-                new FlowChallangePersonsDto{ Id=3, FirstName="Maggie", LastName="Simpson", Email="ak@infoworker.no", Birthday=new DateTime(2017, 10, 21), Relation="Tier1", Role="Cute"},
-                new FlowChallangePersonsDto{ Id=4, FirstName="Lisa", LastName="Simpson", Email="ml@infoworker.no", Birthday=new DateTime(2008, 11, 05), Relation="Tier1", Role="Genius"},
-                new FlowChallangePersonsDto{ Id=5, FirstName="Homer", LastName="Simpson", Email="bo@infoworker.no", Birthday=new DateTime(1975, 12, 12), Relation="Tier1", Role="Drunk"},
-                new FlowChallangePersonsDto{ Id=6, FirstName="Hussain", LastName="Flanders", Email="ha@infoworker.no", Birthday=new DateTime(1994, 02, 28), Relation="Tier2", Role="Someone"},
-                new FlowChallangePersonsDto{ Id=7, FirstName="Kokulan", LastName="Burns", Email="kr@infoworker.no", Birthday=new DateTime(1968, 01, 11), Relation="Tier2", Role="Someone"},
-                new FlowChallangePersonsDto{ Id=8, FirstName="Ronny", LastName="Syzlak", Email="rs@infoworker.no", Birthday=new DateTime(1957, 08, 15), Relation="Tier2", Role="CEO"},
-            };
+            var allNSAFiles = await _context.Persons
+                .Include(l => l.Location).ThenInclude(p => p.Person)
+                .ToListAsync();
 
-            return Ok(persons);
+            return Ok(Mapper.Map<List<PersonDto>>(allNSAFiles));
         }
 
+        /// <summary>
+        /// - Get a secret personel file by id (Open)
+        /// </summary>
+        [HttpGet("{id}", Name = "GetNSAFile")]        
+        public async Task<ActionResult<PersonDto>> GetNSAFile(int id)
+        {
+            var oneNSAFile = await _context.Persons
+                .Include(l => l.Location)               
+                .FirstOrDefaultAsync(sd => sd.Id == id);
+
+            if (oneNSAFile == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(Mapper.Map<PersonDto>(oneNSAFile));
+        }
+
+        /// <summary>
+        /// - Change a secret personel file (need accesskey)
+        /// </summary>
+        [HttpPut("{id}", Name = "PutNSAFile")]
+        public async Task<ActionResult<PersonDto>> PutSecretLair(int id, [FromBody] PersonDto secretNSAFile)
+        {
+            var updateNSAFile = await _context.Persons
+                .Include(l => l.Location)               
+                .FirstOrDefaultAsync(sd => sd.Id == id);
+
+            if (updateNSAFile == null)
+            {
+                return NotFound();
+            }
+            
+            updateNSAFile.FirstName = secretNSAFile.FirstName;
+            updateNSAFile.LastName = secretNSAFile.LastName;
+            updateNSAFile.Email = secretNSAFile.Email;
+            //updateNSAFile.Location. = secretLair.Position.Lat;
+            //updateNSAFile.Position.Lng = secretLair.Position.Lng;
+
+            _context.Entry(updateNSAFile).State = EntityState.Modified;
+            
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
         
         /// <summary>
-        /// 
+        /// - Add a new secret personel file (need accesskey)
         /// </summary>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost(Name = "PostNSAFile")]
+        public async Task<ActionResult<PersonInsertDto>> PostNSAFile([FromBody] PersonInsertDto secretNSAFile)
         {
-        }
+            if (secretNSAFile == null)
+            {
+                return BadRequest();
+            }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+            Person addNSAFile = Mapper.Map<Person>(secretNSAFile);
+
+            _context.Persons.Add(addNSAFile);
+            await _context.SaveChangesAsync();
+
+            Person newNSAFile = await _context.Persons
+                .Include(l => l.Location)
+                .FirstOrDefaultAsync(p => p.Id == addNSAFile.Id);
+            
+            return CreatedAtRoute(
+                routeName: "GetNSAFile",
+                routeValues: new { id = newNSAFile.Id },
+                value: Mapper.Map<PersonDto>(newNSAFile));
+        }        
     }
 }

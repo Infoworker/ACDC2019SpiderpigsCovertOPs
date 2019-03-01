@@ -21,7 +21,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>().HasMany(s => s.Location).WithOne(s => s.Person);
+            modelBuilder.Entity<Person>().HasMany(s => s.Location).WithOne(s => s.Person).IsRequired();
         }
     }
 }

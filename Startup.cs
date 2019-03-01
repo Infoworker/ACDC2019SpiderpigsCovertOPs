@@ -20,7 +20,7 @@ using ACDC2019SpiderpigsCovertOPs.Models.ViewModels;
 
 namespace ACDC2019SpiderpigsCovertOPs
 {
-    #pragma warning disable 1591
+#pragma warning disable 1591
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -33,7 +33,7 @@ namespace ACDC2019SpiderpigsCovertOPs
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CovertOPsContext>(opt => 
+            services.AddDbContext<CovertOPsContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("CovertOPsConnection")));
 
             //services.AddScoped<INSAFilesServices, NSAFilesServices>();
@@ -61,7 +61,11 @@ namespace ACDC2019SpiderpigsCovertOPs
                     builder => builder.AllowAnyOrigin());
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(
+                        options => options.SerializerSettings.ReferenceLoopHandling =
+                        Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,10 +93,14 @@ namespace ACDC2019SpiderpigsCovertOPs
                 mapper.CreateMap<Sensordata, SensordataInsertDto>().ReverseMap();
                 mapper.CreateMap<Incident, IncidentDto>().ReverseMap();
                 mapper.CreateMap<Incident, IncidentInsertDto>().ReverseMap();
-                mapper.CreateMap<Building, BuildingDto>().ReverseMap();  
+                mapper.CreateMap<Building, BuildingDto>().ReverseMap();
                 mapper.CreateMap<Building, BuildingInsertDto>().ReverseMap();
-                mapper.CreateMap<Position, PositionDto>().ReverseMap();  
-                mapper.CreateMap<Position, PositionInsertDto>().ReverseMap();                 
+                mapper.CreateMap<Position, PositionDto>().ReverseMap();
+                mapper.CreateMap<Position, PositionInsertDto>().ReverseMap();
+                mapper.CreateMap<Person, PersonDto>().ReverseMap();
+                mapper.CreateMap<Person, PersonInsertDto>().ReverseMap();
+                mapper.CreateMap<Location, LocationDto>().ReverseMap();
+                mapper.CreateMap<Location, LocationInsertDto>().ReverseMap();
             });
 
 
