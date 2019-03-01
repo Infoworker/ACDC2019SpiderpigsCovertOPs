@@ -4,14 +4,16 @@ using ACDC2019SpiderpigsCovertOPs.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ACDC2019SpiderpigsCovertOPs.Migrations
 {
     [DbContext(typeof(CovertOPsContext))]
-    partial class CovertOPsContextModelSnapshot : ModelSnapshot
+    [Migration("20190301154839_NyDb5")]
+    partial class NyDb5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,8 +89,6 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
 

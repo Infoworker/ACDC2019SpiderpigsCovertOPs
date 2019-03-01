@@ -4,14 +4,16 @@ using ACDC2019SpiderpigsCovertOPs.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ACDC2019SpiderpigsCovertOPs.Migrations
 {
     [DbContext(typeof(CovertOPsContext))]
-    partial class CovertOPsContextModelSnapshot : ModelSnapshot
+    [Migration("20190301154734_NyDb4")]
+    partial class NyDb4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,13 +73,9 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
 
                     b.Property<string>("Lng");
 
-                    b.Property<long?>("PersonId");
-
                     b.Property<DateTime>("Time");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
 
                     b.ToTable("Locations");
                 });
@@ -88,13 +86,15 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Email");
-
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
 
+                    b.Property<long?>("LocationId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
 
                     b.ToTable("Persons");
                 });
@@ -138,11 +138,11 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
                         .HasForeignKey("PositionId");
                 });
 
-            modelBuilder.Entity("ACDC2019SpiderpigsCovertOPs.Models.DbModels.Location", b =>
+            modelBuilder.Entity("ACDC2019SpiderpigsCovertOPs.Models.DbModels.Person", b =>
                 {
-                    b.HasOne("ACDC2019SpiderpigsCovertOPs.Models.DbModels.Person", "Person")
-                        .WithMany("Location")
-                        .HasForeignKey("PersonId");
+                    b.HasOne("ACDC2019SpiderpigsCovertOPs.Models.DbModels.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId");
                 });
 #pragma warning restore 612, 618
         }
