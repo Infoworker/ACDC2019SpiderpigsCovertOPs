@@ -28,7 +28,8 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Temprature = table.Column<string>(nullable: true),
+                    Temperature = table.Column<double>(nullable: false),
+                    Location = table.Column<string>(nullable: true),
                     Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

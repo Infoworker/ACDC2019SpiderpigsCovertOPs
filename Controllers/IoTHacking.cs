@@ -24,17 +24,17 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
             _context = context;
         }
 
-        [HttpGet(Name = "GetAllTempratures")]
-        public ActionResult GetAllTempratures()
+        [HttpGet(Name = "GetAllTemperatures")]
+        public ActionResult GetAllTemperatures()
         {
-            var allTempratures = _context.Sensordatas.ToList();
+            var allTemperatures = _context.Sensordatas.ToList();
 
-            return Ok(allTempratures);          
+            return Ok(allTemperatures);          
         }
 
-        [HttpGet("{id}", Name = "GetTemprature")]
+        [HttpGet("{id}", Name = "GetTemperature")]
         //[Route("{id:int}", Name = nameof(GetSingleFood))]
-        public ActionResult<SensordataDto> GetTemprature(int id)
+        public ActionResult<SensordataDto> GetTemperature(int id)
         {
             var result = _context.Sensordatas.FirstOrDefault(sd => sd.Id == id); // data access call
 
@@ -50,7 +50,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
         /// 
         /// </summary>
         [HttpPost]
-        public ActionResult<SensordataInsertDto> PostTempratures([FromBody] SensordataInsertDto sensordataInsertDto)
+        public ActionResult<SensordataInsertDto> PostTemperatures([FromBody] SensordataInsertDto sensordataInsertDto)
         {
             if (sensordataInsertDto == null)
             {
@@ -67,12 +67,12 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
             _context.Sensordatas.Add(addSensordata);
             _context.SaveChanges();
 
-            Sensordata newTemprature = _context.Sensordatas.FirstOrDefault(sd => sd.Id == addSensordata.Id);
+            Sensordata newTemperature = _context.Sensordatas.FirstOrDefault(sd => sd.Id == addSensordata.Id);
 
             return CreatedAtRoute(
                 routeName: "GetTemprature",
-                routeValues: new { id = newTemprature.Id },
-                value: Mapper.Map<SensordataDto>(newTemprature));
+                routeValues: new { id = newTemperature.Id },
+                value: Mapper.Map<SensordataDto>(newTemperature));
         }
 
 
