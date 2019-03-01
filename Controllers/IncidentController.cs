@@ -14,13 +14,13 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
     /// Controller - Persons
     [Route("api/[controller]")]
     [ApiController]
-    public class IncidentController : ControllerBase
+    public class ShitHappensController : ControllerBase
     {
 
         private CovertOPsContext _context;
 
         ///
-        public IncidentController(CovertOPsContext context)
+        public ShitHappensController(CovertOPsContext context)
         {
             _context = context;
         }

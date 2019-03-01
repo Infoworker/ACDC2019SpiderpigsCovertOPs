@@ -13,13 +13,13 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
     /// Controller - Persons
     [Route("api/[controller]")]
     [ApiController]
-    public class IoTHackingController : ControllerBase
+    public class IoTHackingsController : ControllerBase
     {
 
         private CovertOPsContext _context;
 
         ///
-        public IoTHackingController(CovertOPsContext context)
+        public IoTHackingsController(CovertOPsContext context)
         {
             _context = context;
         }

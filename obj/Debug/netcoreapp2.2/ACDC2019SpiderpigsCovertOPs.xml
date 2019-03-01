@@ -17,35 +17,35 @@
             - Gets all issues for the Flow Challange
             </summary>
         </member>
-        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController">
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController">
             Controller - Persons
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
             
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.GetAllIncidents">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.GetAllIncidents">
             
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.GetIncident(System.Int32)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.GetIncident(System.Int32)">
             
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.PutIncident(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.DbModels.Incident)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.PutIncident(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.DbModels.Incident)">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.PostIncident(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.IncidentInsertDto)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.ShitHappensController.PostIncident(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.IncidentInsertDto)">
             <summary>
             
             </summary>
         </member>
-        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController">
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController">
             Controller - Persons
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
             
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.PostTemperatures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingsController.PostTemperatures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
             <summary>
             
             </summary>
@@ -74,6 +74,32 @@
         <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Delete(System.Int32)">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController">
+            Controller - Persons
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+            Secret lair controller
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.GetAllSecretLairs">
+            <summary>
+            - Get all secret lairs around the world (Open)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.GetSecretLair(System.Int32)">
+            <summary>
+            - Get a secret lair by id (Open)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.PutSecretLair(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.ViewModels.BuildingDto)">
+            <summary>
+            - Change a secret lair (need accesskey)
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.SecretLairsController.PostSecretLair(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.BuildingInsertDto)">
+            <summary>
+            - Add a new secret lair (need accesskey)
             </summary>
         </member>
     </members>
