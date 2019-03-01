@@ -17,6 +17,28 @@
             - Gets all issues for the Flow Challange
             </summary>
         </member>
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController">
+            Controller - Persons
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+            
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.GetAllIncidents">
+            
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.GetIncident(System.Int32)">
+            
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.PutIncident(System.Int32,ACDC2019SpiderpigsCovertOPs.Models.DbModels.Incident)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IncidentController.PostIncident(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.IncidentInsertDto)">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController">
             Controller - Persons
         </member>
