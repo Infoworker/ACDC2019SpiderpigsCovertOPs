@@ -44,7 +44,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
 
                     b.Property<string>("Location");
 
-                    b.Property<double>("Temprature");
+                    b.Property<double>("Temperature");
 
                     b.HasKey("Id");
 

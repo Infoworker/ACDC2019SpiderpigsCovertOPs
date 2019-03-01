@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ACDC2019SpiderpigsCovertOPs.Migrations
 {
     [DbContext(typeof(CovertOPsContext))]
-    [Migration("20190301102258_NyDb2")]
-    partial class NyDb2
+    [Migration("20190301131155_NyDb")]
+    partial class NyDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,7 +46,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Migrations
 
                     b.Property<string>("Location");
 
-                    b.Property<double>("Temprature");
+                    b.Property<double>("Temperature");
 
                     b.HasKey("Id");
 

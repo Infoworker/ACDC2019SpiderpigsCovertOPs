@@ -23,7 +23,7 @@
         <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
             
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.PostTempratures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.PostTemperatures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
             <summary>
             
             </summary>
