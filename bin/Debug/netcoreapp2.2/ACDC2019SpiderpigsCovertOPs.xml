@@ -7,14 +7,51 @@
         <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.FlowChallangesController">
             Controller for the Flow Challange:
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.FlowChallangesController.Get">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.FlowChallangesController.GetPersons">
             <summary>
             - Gets all persondata for the Flow Challange
             </summary>
         </member>
-        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Get">
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.FlowChallangesController.GetIssues">
             <summary>
-            - Gets all persons in the NSA Db
+            - Gets all issues for the Flow Challange
+            </summary>
+        </member>
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController">
+            Controller - Persons
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+            
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.IoTHackingController.PostTempratures(ACDC2019SpiderpigsCovertOPs.Models.ViewModels.SensordataInsertDto)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController">
+            Controller - Persons
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.#ctor(ACDC2019SpiderpigsCovertOPs.Database.CovertOPsContext)">
+            
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.GetPersons">
+            <summary>
+            - Gets all persondata for the Flow Challange
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Post(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Put(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ACDC2019SpiderpigsCovertOPs.Controllers.NSAFilesController.Delete(System.Int32)">
+            <summary>
+            
             </summary>
         </member>
     </members>

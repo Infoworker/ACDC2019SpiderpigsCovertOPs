@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ACDC2019SpiderpigsCovertOPs
 {
+    #pragma warning disable 1591
     public class Program
     {
         public static void Main(string[] args)

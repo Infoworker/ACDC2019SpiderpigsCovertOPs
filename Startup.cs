@@ -8,14 +8,19 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using ACDC2019SpiderpigsCovertOPs.Database;
+using ACDC2019SpiderpigsCovertOPs.Models.DbModels;
+using ACDC2019SpiderpigsCovertOPs.Models.ViewModels;
 
 namespace ACDC2019SpiderpigsCovertOPs
 {
+    #pragma warning disable 1591
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -28,6 +33,11 @@ namespace ACDC2019SpiderpigsCovertOPs
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<CovertOPsContext>(opt => 
+                opt.UseSqlServer(Configuration.GetConnectionString("CovertOPsConnection")));
+
+            //services.AddScoped<INSAFilesServices, NSAFilesServices>();
+
             // Register Swagger generator
             services.AddSwaggerGen(c =>
             {
@@ -72,6 +82,13 @@ namespace ACDC2019SpiderpigsCovertOPs
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Spiderpigs Covert OPs");
             });
+
+            AutoMapper.Mapper.Initialize(mapper =>
+            {
+                mapper.CreateMap<Sensordata, SensordataDto>().ReverseMap();
+                mapper.CreateMap<Sensordata, SensordataInsertDto>().ReverseMap();                
+            });
+
 
             app.UseHttpsRedirection();
             app.UseCors();
