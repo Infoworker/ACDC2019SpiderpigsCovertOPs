@@ -70,7 +70,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Controllers
             Sensordata newTemperature = _context.Sensordatas.FirstOrDefault(sd => sd.Id == addSensordata.Id);
 
             return CreatedAtRoute(
-                routeName: "GetTemprature",
+                routeName: "GetTemperature",
                 routeValues: new { id = newTemperature.Id },
                 value: Mapper.Map<SensordataDto>(newTemperature));
         }
