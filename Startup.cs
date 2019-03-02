@@ -104,6 +104,8 @@ namespace ACDC2019SpiderpigsCovertOPs
                 mapper.CreateMap<Person, PersonInsertDto>().ReverseMap();
                 mapper.CreateMap<Location, LocationDto>().ReverseMap();
                 mapper.CreateMap<Location, LocationInsertDto>().ReverseMap();
+                mapper.CreateMap<Spiderpig, SpiderpigDto>().ReverseMap();
+                mapper.CreateMap<Spiderpig, SpiderpigInsertDto>().ReverseMap();
             });
 
 
