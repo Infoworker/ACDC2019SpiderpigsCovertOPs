@@ -18,6 +18,7 @@ namespace ACDC2019SpiderpigsCovertOPs.Database
         public DbSet<Person> Persons { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Sensordata> Sensordatas { get; set; }
+        public DbSet<Spiderpig> Spiderpigs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
