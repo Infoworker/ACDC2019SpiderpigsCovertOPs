@@ -58,7 +58,10 @@ namespace ACDC2019SpiderpigsCovertOPs
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowOrigin",
-                    builder => builder.AllowAnyOrigin());
+                    builder => builder.AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod()                
+                );
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
@@ -105,7 +108,7 @@ namespace ACDC2019SpiderpigsCovertOPs
 
 
             app.UseHttpsRedirection();
-            app.UseCors();
+            app.UseCors("AllowOrigin");
             app.UseMvc();
         }
     }
